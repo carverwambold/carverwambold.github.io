@@ -1,34 +1,49 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--off-white);
+    /* remove any potential margins */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+
+
 /* from what i understand, : root { (variables) } declares them in a global context, meaning they aren't fully an environmental variable so you can only use it in the context of main.css*/
 :root {
-    /* Here is our color theme */
-    --natural-green: #687363;
-    --soft-beige: #F2EDE4;
-    --warm-taupe: #A6927B;
-    --light-sand: #D9C9BA;
-    --deep-black: #0D0D0D;
+    /* Hex Colors */
+    --slate: #23252C;
+    --sage: #53665E;
+    --light-gray: #A3AEB0;
+    --off-white: #E4E8EA;
+    --taupe: #B09F95;
 }
 /* here i defined a little thing which aligns things horizontally in a stack structure, meaning first object in the stack will be on the left */
 .hstack {
     display: flex;
-    align-items: center; /* Vertically centers the items */
+    align-items: center;
     gap: 5%;
-    width: 98%;
-    padding: 1%;
+    width: 100%; /* changed from 98% */
+    padding: 1% 1%; /* specify both horizontal and vertical padding */
+    box-sizing: border-box; /* ensure padding is included in width calculation */
 }
-/* this is the styling for the header text */
-/* #header-text {
-    
-} */
 
 header {
-    background-color: var(--light-sand);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    background-color: var(--light-gray);
+    /* remove position: fixed */
+    /* remove top, left, right properties */
+    width: 100%; /* ensure header takes full width */
 }
 main {
-    margin-top: 10%;
+    /* remove margin-top */
+    width: 100%;
 }
 
 /* here i create a navbar which is a grid of columns, with 10px seperating them */
@@ -43,26 +58,34 @@ main {
     padding: 10px 20px; /* Increase padding for stability */
     text-align: center;
     text-decoration: none;
-    color: var(--deep-black);
+    color: var(--slate);
 }
 /* here is a hover effect for the nav items */
 .nav-item:hover {
-    border-bottom: 2px solid var(--warm-taupe); 
+    border-bottom: 2px solid var(--taupe); 
 }
 /* adding on to my little class, when the page is selected i change the color */
 .nav-item.active {
     font-weight: bold;
-    border-bottom: 2px solid var(--natural-green);
+    border-bottom: 2px solid var(--sage);
 }
 /* this just changes background color of the body */
 body {
-    background-color: var(--soft-beige);
+    background-color: var(--off-white);
 }
 /* this styles the logo */
 .logo {
-    width: 5%;
-    height: width;
+    width: 10%;
+    position: relative;
 }
+.logo svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10%;
+    height: 10%;
+  }
+
 /* these next two abstract the styling of the text and header */
 .rubik-dirt-regular {
     font-family: "Rubik Dirt", system-ui;
@@ -77,3 +100,9 @@ body {
     width: 60%;
 }
 
+
+
+#MainHomePhoto {
+    position: relative;
+    width: 100%;
+}
