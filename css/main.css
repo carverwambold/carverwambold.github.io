@@ -24,6 +24,9 @@ body {
     --light-gray: #A3AEB0;
     --off-white: #E4E8EA;
     --taupe: #B09F95;
+    --dark-taupe: #8B7D7B;
+    --dark-slate: #1D1E22;
+    --light-sage: #7A8A7A;
 }
 /* here i defined a little thing which aligns things horizontally in a stack structure, meaning first object in the stack will be on the left */
 .hstack {
@@ -36,11 +39,11 @@ body {
 }
 
 header {
+    text-align: center;
     background-color: var(--light-gray);
-    /* remove position: fixed */
-    /* remove top, left, right properties */
     width: 100%; /* ensure header takes full width */
 }
+
 main {
     /* remove margin-top */
     width: 100%;
@@ -48,26 +51,49 @@ main {
 
 /* here i create a navbar which is a grid of columns, with 10px seperating them */
 .navbar {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr; /* Makes all columns the same size */
     justify-content: center;
     align-items: center;
     gap: 10px;
-  }
-/* here i make a nav item, which is each of the little boxes in the grid.  abstracting this lets me write the code in my navbar a lot more readable */
+}
+
 .nav-item {
-    padding: 10px 20px; /* Increase padding for stability */
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
+    font-family: "Uchen", serif;
     color: var(--slate);
+    position: relative;
+    width: 100%; /* Ensures content fills the grid cell */
 }
-/* here is a hover effect for the nav items */
-.nav-item:hover {
-    border-bottom: 2px solid var(--taupe); 
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--taupe);
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
 }
-/* adding on to my little class, when the page is selected i change the color */
-.nav-item.active {
-    font-weight: bold;
-    border-bottom: 2px solid var(--sage);
+
+.nav-item:hover::after {
+    width: 100%;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--sage);
+    transform: translateX(-50%);
 }
 /* this just changes background color of the body */
 body {
@@ -87,22 +113,39 @@ body {
   }
 
 /* these next two abstract the styling of the text and header */
-.rubik-dirt-regular {
-    font-family: "Rubik Dirt", system-ui;
+.uchen-regular {
+    font-family: "Uchen", serif;
     font-weight: 400;
     font-style: normal;
 }
 
-#header-text {
-    font-family: "Rubik Dirt", system-ui;
+.headerspacer {
+    font-family: "Uchen", serif;
     font-weight: 400;
     font-style: bold;
-    width: 60%;
+    width: 20%;
 }
 
 
 
 #MainHomePhoto {
+    width: 100%;
+}
+
+.hero-container {
     position: relative;
     width: 100%;
+}
+
+.hero-text {
+    position: absolute; /* This positions the text over the image */
+    top: 25%;  /* Move the text up (lower percentage moves text down) */
+    left: 20%; /* Move the text left (higher percentage moves text right) */
+    transform: translate(-50%, -50%); /* Centers the text initially, adjust if needed */
+    color: var(--light-gray);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 4rem;
+    text-align: center;
+    margin: 0;
+    border-bottom: var(--light-gray) 5px solid;
 }
