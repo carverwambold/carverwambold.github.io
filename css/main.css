@@ -1,0 +1,79 @@
+/* from what i understand, : root { (variables) } declares them in a global context, meaning they aren't fully an environmental variable so you can only use it in the context of main.css*/
+:root {
+    /* Here is our color theme */
+    --natural-green: #687363;
+    --soft-beige: #F2EDE4;
+    --warm-taupe: #A6927B;
+    --light-sand: #D9C9BA;
+    --deep-black: #0D0D0D;
+}
+/* here i defined a little thing which aligns things horizontally in a stack structure, meaning first object in the stack will be on the left */
+.hstack {
+    display: flex;
+    align-items: center; /* Vertically centers the items */
+    gap: 5%;
+    width: 98%;
+    padding: 1%;
+}
+/* this is the styling for the header text */
+/* #header-text {
+    
+} */
+
+header {
+    background-color: var(--light-sand);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+main {
+    margin-top: 10%;
+}
+
+/* here i create a navbar which is a grid of columns, with 10px seperating them */
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+/* here i make a nav item, which is each of the little boxes in the grid.  abstracting this lets me write the code in my navbar a lot more readable */
+.nav-item {
+    padding: 10px 20px; /* Increase padding for stability */
+    text-align: center;
+    text-decoration: none;
+    color: var(--deep-black);
+}
+/* here is a hover effect for the nav items */
+.nav-item:hover {
+    border-bottom: 2px solid var(--warm-taupe); 
+}
+/* adding on to my little class, when the page is selected i change the color */
+.nav-item.active {
+    font-weight: bold;
+    border-bottom: 2px solid var(--natural-green);
+}
+/* this just changes background color of the body */
+body {
+    background-color: var(--soft-beige);
+}
+/* this styles the logo */
+.logo {
+    width: 5%;
+    height: width;
+}
+/* these next two abstract the styling of the text and header */
+.rubik-dirt-regular {
+    font-family: "Rubik Dirt", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#header-text {
+    font-family: "Rubik Dirt", system-ui;
+    font-weight: 400;
+    font-style: bold;
+    width: 60%;
+}
+
