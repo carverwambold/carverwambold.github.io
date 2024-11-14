@@ -177,3 +177,68 @@ body {
     height: width*4;
     border-radius: 14%;
 }
+
+.footer {
+    background-color: var(--dark-slate);
+    color: var(--light-gray);
+    text-align: center;
+    font-family: "uChen", serif;
+    padding: 2em 1%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.footer-section {
+    width: 100%;
+    max-width: 300px;
+}
+
+.social-logo img {
+    width: 2em !important;
+    height: auto !important;
+    margin: 0 0.5em;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: var(--light-gray);
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-section h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--light-gray);
+}
+
+.footer-section p, .footer-section a {
+    font-size: 0.9em;
+    color: var(--light-gray);
+}
+
+.footer-section a {
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    text-decoration: underline;
+}
+
+.secondHeader {
+    align-items: center;
+    text-align: center;
+    background-color: var(--off-white);
+    width: 100%;
+    padding: 2%;
+}
