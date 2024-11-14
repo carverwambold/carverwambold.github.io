@@ -148,3 +148,25 @@ body {
     text-align: center;
     margin: 0;
 }
+
+.caption1 {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    padding: 5%;
+}
+
+#section2 {
+    background-color: var(--light-sage);
+    width: 100%;
+}
+
+#appdemo{
+    width: 25%;
+}
+
+#swipingview {
+    width: 25%;
+}
