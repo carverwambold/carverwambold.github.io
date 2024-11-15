@@ -242,3 +242,51 @@ body {
     width: 100%;
     padding: 2%;
 }
+
+.photography-journey {
+    background-color: var(--light-sage);
+    padding: 2em;
+    border-radius: 8px;
+    text-align: center;
+    font-family: "Nunito Sans", sans-serif;
+    max-width: 800px;
+    margin: 2em auto;
+    color: var(--slate);
+}
+
+.photography-journey h2 {
+    font-size: 2em;
+    font-family: "Uchen", serif;
+    color: var(--dark-slate);
+    margin-bottom: 0.5em;
+}
+
+.intro-text {
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+}
+
+.image-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 1.5em;
+}
+
+.gallery-img {
+    width: 30%;
+    max-width: 200px;
+    border-radius: 8px;
+}
+
+.gear-list {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.gear-list li {
+    margin: 0.5em 0;
+}
